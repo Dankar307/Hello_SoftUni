@@ -6,7 +6,7 @@ if number_of_snowballs >= 0 and number_of_snowballs <= 100:
     max_weight = 0
     max_time = 0
     max_quality = 0
-    for snowballs in range(1, number_of_snowballs):
+    for snowballs in range(1, number_of_snowballs + 1):
         weight_of_a_snowball = int(input())
         time_needed_per_snowball = int(input())
         quality_of_a_snowball = int(input())
