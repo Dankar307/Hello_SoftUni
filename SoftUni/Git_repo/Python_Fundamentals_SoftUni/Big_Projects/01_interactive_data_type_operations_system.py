@@ -66,19 +66,23 @@ elif choice == '4':
     print(list1[-1])
 # ### Tuple Operations ###
 # Create a tuple with some string elements (e.g., fruits).
-
+    tuple_name = ("apple", "orange", "pear")
 # Print the length of the tuple.
-
+    print(len(tuple_name))
 # Try to modify one element in the tuple and handle the resulting TypeError.
-
+    try:
+        tuple_name[0] = 12
+    except:
+        print("Type Error")
 # ### Dictionary Operations ###
 # Create a dictionary with some key-value pairs (e.g., name, age, city).
-
+    dict_name = {"name" : 'Daniel','age':17,'city':'Sofia'}
 # Access and print the value for one of the keys (e.g., "age").
-
+    print(dict_name["name"])
 # Add a new key-value pair to the dictionary and print the updated dictionary.
-
+    dict_name['country'] = 'Bulgaria'
+    print(dict_name)
 # If the user enters an invalid choice:
 else:
-    pass
+    print('Invalid Choice! \nPlease Enter Valid Selection:')
 # Print an error message indicating an invalid selection.
