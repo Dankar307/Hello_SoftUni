@@ -34,5 +34,4 @@ while True:
     else:
         for i in list_of_paintings:
             print(i, end=" ")
-
         break

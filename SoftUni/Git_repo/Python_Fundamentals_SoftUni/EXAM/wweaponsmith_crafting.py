@@ -26,3 +26,4 @@ while True:
         joined_list = "".join(list_of_weapon_particles)
         print(f"You crafted {joined_list}!")
         break
+        
