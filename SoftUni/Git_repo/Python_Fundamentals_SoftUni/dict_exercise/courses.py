@@ -1,18 +1,21 @@
-courses_students = {}
-courses_numbers = {}
-command = input()
-while command != "end":
-    course_name, student_name = command.split(" : ")
-    key = course_name
-    if key not in courses_students.keys() or student_name not in courses_students.values():
-        courses_students[key] = student_name
-        courses_numbers[key] = 1
-    elif key in courses_students.keys():
-        courses_students[key] = student_name
-        courses_numbers[key] += 1
-    command = input()
-for courses in courses_students.keys():
 
-    print(f"{courses}: {courses_numbers[courses]}")
-    for students in courses_numbers:
-        print(f"-- {courses_students[students]}")
+courses = {}
+
+while True:
+    line = input()
+
+    if line.lower() == "end":
+        break
+
+    course_name, student_name = line.split(" : ")
+
+    if course_name not in courses:
+        courses[course_name] = {}
+
+    courses[course_name][student_name] = True
+
+for course_name, students in courses.items():
+    print(f"{course_name}: {len(students)}")
+    for student in students:
+        print(f"-- {student}")
+
