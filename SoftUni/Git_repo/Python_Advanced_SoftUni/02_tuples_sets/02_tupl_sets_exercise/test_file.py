@@ -1,10 +1,8 @@
 from collections import deque
-besinput = "20 62 99 35 0 150"
-nctarinput = "120 60 10 1 70 10"
-symbolinput = "+ - + + / * - - /"
-bees = deque(int(x) for x in besinput.split())
-nectar = [int(x) for x in nctarinput.split()]
-symbols = deque(symbolinput.split())
+
+bees = deque(int(x) for x in input().split())
+nectar = [int(x) for x in input().split()]
+symbols = deque(input().split())
 
 honey = 0
 
@@ -16,7 +14,7 @@ operators = {
 }
 
 while bees and nectar:
-    if bees[0] >= nectar[-1]:
+    if bees[0] <= nectar[-1]:
         honey += abs(operators[symbols[0]](bees[0], nectar[-1]))
         bees.popleft()
         nectar.pop()
@@ -27,7 +25,6 @@ while bees and nectar:
 
 print(f"Total honey made: {honey}")
 if bees:
-    print(f"Bees left: {", ".join(str(x) for x in bees)}")
+    print(f"Bees left: {', '.join(str(x) for x in bees)}")
 if nectar:
-    print(f"Nectar left: {", ".join(str(x) for x in nectar)}")
-a = int(input())
+    print(f"Nectar left: {', '.join(str(x) for x in nectar)}")
