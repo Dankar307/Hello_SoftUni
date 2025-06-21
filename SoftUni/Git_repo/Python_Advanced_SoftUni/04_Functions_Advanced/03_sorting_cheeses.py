@@ -1,11 +1,12 @@
 def sorting_cheeses(**kwargs):
-    cheese_dict = sorted(kwargs.items(), key=lambda x: (-len(x[1]), x[0]))
-    result = []
-    for (cheese_name, quantities) in cheese_dict:
-        result.append(cheese_name)
-        quantity_list = sorted(quantities, reverse=True)
-        result += quantity_list
-        return "\n".join([str(x) for x in result])
+    cheese_dict = sorted(kwargs.items(), key=lambda kvp: (-len(kvp[1]), kvp[0]))
+    result = ''
+    for cheese_name, quantities in cheese_dict:
+        result += cheese_name + '\n'
+
+        for quantity in sorted(quantities, reverse=True):
+            result += str(quantity) + '\n'
+    return result
 
 print(
     sorting_cheeses(
